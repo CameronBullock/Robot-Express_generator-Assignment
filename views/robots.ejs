@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ./partials/head %>
+  </head>
+  <body>
+    <header>
+      <% include ./partials/header %>
+    </header>
+    <div class="container">
+
+  <div class='row'>
+     <div class='col s12 m4'>
+       <h3>Add Robot</h3>
+       <form action='/robots' method='post'>
+         <input type='text' name='name' placeholder='name' />
+         <button class='btn btn-waves red' type='submit'>Add Robot</button>
+       </form>
+     </div>
+     <table class='table col s12'>
+       <thead>
+         <th>Title</th>
+       </thead>
+
+       <tbody>
+         <% robots.forEach( function(robot) { %>
+
+           <tr>
+             <td><%= robot %></td>
+         <% }); %>
+       </tbody>
+     </table>
+  </div>
+</div>
+  </body>
+</html>
